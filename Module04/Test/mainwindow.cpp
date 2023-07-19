@@ -32,7 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
 //    Initialize Car's position by Label geometry
     for (int i=0; i<CAR_count; i++)
     {
-        CAR_ang[i] = 90.0;
+        CAR_ang[i] = 0;
         CAR_rot[i].rotate(0);
         CAR_ptr[i]->setPixmap(CAR_img[i].transformed(CAR_rot[i]));
         test_game.carList[i]->setX(CAR_ptr[i]->geometry().x());

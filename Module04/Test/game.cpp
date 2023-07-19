@@ -22,7 +22,7 @@ void game::startRace()
     foreach (Car *car, carList) {
         QThread *thread = new QThread();
         CarThread *carThread = new CarThread(car);
-        carThread->moveToThread(thread);
+        carThread->moveToThread(thread); //Then create a new QThread instance, push the QObject onto it using moveToThread(QThread*) of the QObject instance and call start() on the QThread instanc
         carThread->keymapping(&keys[i][0],&keys[i][1],&keys[i][2],&keys[i][3]);
 
         connect(car, &Car::positionChanged, carThread, &CarThread::run);
